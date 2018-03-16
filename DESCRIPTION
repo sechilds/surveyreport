@@ -2,6 +2,7 @@ Package: surveyreport
 Type: Package
 Title: Support OPIA Survey Report Generation
 Version: 0.1.0
+Author: Stephen Childs <sechilds@yorku.ca
 Author@R: person("Stephen", "Childs", email = "sechilds@yorku.ca",
                  role = c("aut", "cre"))
 Maintainer: Stephen Childs <sechilds@yorku.ca>
@@ -13,3 +14,4 @@ LazyData: true
 Imports:
   DBI,
   RPostgreSQL
+RoxygenNote: 6.0.1
