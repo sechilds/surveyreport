@@ -14,7 +14,10 @@
 #   Check Package:             'Ctrl + Shift + E'
 #   Test Package:              'Ctrl + Shift + T'
 
-
+#' Open connection to the PostgreSQL database
+#'
+#' @return A list containing the database driver and connection.
+#' @export
 db_connection <- function() {
   pw <- "nssedata"
 
@@ -25,6 +28,11 @@ db_connection <- function() {
   list(drv = drv, con = con)
 }
 
+#' Close the connection to the PostgreSQL database
+#'
+#' @param drv database driver
+#' @param con database connection
+#' @export
 db_close <- function(drv, con) {
   DBI::dbDisconnect(con)
   DBI::dbUnloadDriver(drv)
