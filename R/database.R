@@ -2,7 +2,6 @@
 #
 # A function to connect to the database and a function
 # to close that connection.
-# which prints 'Hello, world!'.
 #
 # You can learn more about package authoring with RStudio at:
 #
@@ -25,7 +24,7 @@ db_connection <- function() {
   con <- DBI::dbConnect(drv, dbname = "postgres",
                         host = "db", port = 5432,
                         user = "postgres", password = pw)
-  list(drv = drv, con = con)
+  return(list(drv = drv, con = con))
 }
 
 #' Close the connection to the PostgreSQL database
