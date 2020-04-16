@@ -34,5 +34,9 @@ db_connection <- function() {
 #' @export
 db_close <- function(drv, con) {
   DBI::dbDisconnect(con)
+  all_cons <- DBI::dbListConnections(drv)
+  for (cn in all_cons) {
+    DBI::dbDisconnect(cn)
+  }
   DBI::dbUnloadDriver(drv)
 }
